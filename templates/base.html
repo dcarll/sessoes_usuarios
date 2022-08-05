@@ -1,0 +1,29 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--inicio do bloco titulo -->
+    {% block title %}
+		<title></title>
+	{% endblock title %}
+	<!--fim do bloco titulo -->
+
+	<!--carregando o css -->
+	{% bootstrap_css %}
+</head>
+	
+	<!--bloco de conteudos -->
+	{% block content %}
+	{% endblock %}
+	<!--fim bloco de conteudos -->
+
+	<!--carregando o js -->
+	{% bootstrap_javascript jquery='full' %}
+<body>
+
+</body>
+</html>
