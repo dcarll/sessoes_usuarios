@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -129,6 +129,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static')
 
+
+#substitui o padrão de usuario do django por um padrao criado na aplicação  'usuarios'
 AUTH_USER_MODEL = 'usuarios.CustomUsuario'
 
 # Default primary key field type
