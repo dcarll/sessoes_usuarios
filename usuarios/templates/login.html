@@ -2,10 +2,20 @@
 {% load bootstrap4 %}
 
 {% block title %}
-    Login
+Login
 {% endblock %}
 
+	
+
 {% block content %}
-	<h1 class="mx-auto">Cadastro</h1>
+	<div class="form container"
+		<h1 class="mx-auto">Login</h1>
+		<form action="{% url 'login' %}" method="post">
+			{% csrf_token %}
+			<input type="email" placeholder="email..." name="email"><br><br>
+			<input type="password" placeholder="senha..." name="senha"><br><br>
+			<input type="submit" value="Logar"><br>
+		</form>
+	</div>
 	
 {% endblock %}

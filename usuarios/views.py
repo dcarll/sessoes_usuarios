@@ -1,5 +1,7 @@
 from email.policy import HTTP
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render
@@ -46,5 +48,25 @@ def cadastro(request):
 		return HttpResponse(username)
 		
 
-def login(request):
-	return render(request, 'login.html')
+def logar(request):
+	if request.method == "GET":
+		return render(request, 'login.html')	
+	else:
+		username = request.POST.get('email')
+		senha = request.POST.get('senha')
+		print(f'rmail: {username}')
+		print(f'Senha: {senha}')
+
+		user = authenticate(email=username, password=senha)
+
+		if user:
+			login(request, user)
+
+			return HttpResponse("Autenticado")
+		else:
+			return HttpResponse("Email ou senha invalido")
+
+@login_required(login_url='/auth/login/')
+def plataforma(request):
+		return HttpResponse('Plataforma')
+	
