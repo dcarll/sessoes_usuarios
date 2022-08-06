@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+
+{% block title %}
+Cadastro
+{% endblock %}
+	
+
+{% block content %}
+	<div class="form container"
+		<h1 class="mx-auto">Cadastro</h1>
+		<form action="{% url 'cadastro' %}" method="post">
+			{% csrf_token %}
+			<input type="text" placeholder="Username..." name="usermane"><br><br>
+			<input type="email" placeholder="email..." name="email"><br><br>
+			<input type="password" placeholder="senha..." name="senha"><br><br>
+			<input type="submit" value="cadastrar"><br>
+		</form>
+	</div>
+	
+{% endblock %}
