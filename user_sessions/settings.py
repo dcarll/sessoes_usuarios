@@ -127,7 +127,9 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static')
+
+#acessar o css da paginga'templates/static/css' no APP_DIR
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
 
 
 #substitui o padrão de usuario do django por um padrao criado na aplicação  'usuarios'
