@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+<!--block css_local-->
+{% block css_local %}
+<!--css_local-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css">
+	body{
+		background-image: url({% static 'imagens/fundo_login.jpg'%});
+	}
+	.container{
+		justify-content: center;
+		display: flex;
+		margin-top: 25px;
+		padding-top: 25px;
+		width: 400px;
+        height: 100px;
+        flex-wrap: wrap;
+
+		
+	}
+	.container > div {
+          background-color: #f1f1f1;
+          width: 300px;
+          margin: 10px;
+          text-align: center;
+          font-size: 20px;
+          border-radius: 10px;
+
+</style>
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+	<div class="card card-container">
+		<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+		<img id="" class="profile-img-card" src="{% static 'imagens/tec.png'%}" />
+		<p id="profile-name" class="profile-name-card"></p>
+		<form class="form-signin" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+
+
+			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+		</form><!-- /form -->
+		<a href="#" class="forgot-password">
+			Esqueceu a senha?
+		</a>
+	</div><!-- /card-container -->
+</div><!-- /container -->
+
+{% endblock %}
+
+<!--block js_local-->
+{% block js_local %}
+	<!--js_local-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endblock %}

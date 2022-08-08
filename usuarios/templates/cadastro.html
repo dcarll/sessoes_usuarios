@@ -1,21 +1,139 @@
 {% extends 'base.html'%}
 {% load bootstrap4 %}
-
+{% load static %}
 {% block title %}
 Cadastro
 {% endblock %}
-	
+<!--block css_local-->
+{% block css_local %}
+<!--css_local-->
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style type="text/css">
+	body{
+		background-image: url({% static 'imagens/fundo_login.jpg'%});
+		background-repeat: repeat-y;
+		 background-size: cover;
+	}
+	.container{
+		justify-content: center;
+		display: flex;
+		margin-top: 25px;
+		padding-top: 25px;
+		width: auto;
+		  height: 100px;
+		  flex-wrap: wrap;
+
+
+	}
+	.container > div {
+          background-color: #f1f1f1;
+          width: 300px;
+          text-align: center;          
+          border-radius: 10px;
+          flex-wrap: wrap;
+          width: 900px;
+          height: 800px
+          margin: 10px;
+   }
+
+
+</style>
+{% endblock %}
 {% block content %}
-	<div class="form container"
-		<h1 class="mx-auto">Cadastro</h1>
-		<form action="{% url 'cadastro' %}" method="post">
-			{% csrf_token %}
-			<input type="text" placeholder="Username..." name="usermane"><br><br>
-			<input type="email" placeholder="email..." name="email"><br><br>
-			<input type="password" placeholder="senha..." name="senha"><br><br>
-			<input type="submit" value="cadastrar"><br>
-		</form>
-	</div>
-	
+<div class="container">
+      <div class="row">
+         
+         <div class="col-sm-12">
+            <h1 class="text-center bg-success text-white border border-primary rounded" > Registrar</h1>
+            <br/>
+            <div class="col-sm-12 border">
+
+               <br/>
+               <div class="tab-content">
+                  <div id="home" class="tab-pane fade in active">
+
+					  <!--formulário-->
+                     <form action="{% url 'cadastro'%}" method="post">
+						 {% csrf_token %}
+						 <div class="nav nav-pills border">
+
+							 <!--nome de usuario-->
+							 <div class="form-group mx-3 col-sm-3">
+							   <label for="UserName">Nome de usuário</label>
+							   <input type="text" class="form-control" id="email" name="username">
+							</div>
+
+							 <!--Primeiro nome-->
+							 <div class="form-group mx-3 col-sm-3">
+							   <label for="UserName">Primeiro nome</label>
+							   <input type="text" class="form-control" id="email" name="first-name">
+							</div>
+
+							 <!--Ultimo nome-->
+							 <div class="form-group mx-3 col-sm-5">
+							   <label for="UserName">Ultimo nome</label>
+							   <input type="text" class="form-control" id="email" name="last-name">
+							</div>
+
+						 </div>
+						 <hr>
+
+						<!--Email-->
+                        <div class="row d-flex justify-content-center">
+							<div class="form-group col-sm-7">
+							   <label for="email">Email</label>
+							   <input type="email" class="form-control" id="email" name="email">
+                        	</div>
+						</div>
+
+						 <hr>
+
+						 <!--Senha-->
+						 <div class="row d-flex justify-content-center">
+							 <div class="col-sm-5">
+								 <div class="col">
+									  <div class="form-group">
+										  <label for="pwd">Password:</label>
+										  <input type="password" class="form-control" id="pwd" name="senha1">
+									  </div>
+									 <div class="form-group">
+									   <label for="pwd">Confirm Password:</label>
+									   <input type="password" class="form-control" id="pwd" name="senha2">
+									 </div>
+							     </div>
+							 </div>
+						 </div>
+
+						 <hr>
+						 <!--botões -->
+						 <div d-flex justify-content-center>
+							 <button type="submit" class="btn btn-default btn-lg bg-success">Registrar</button>
+						 </div>
+						 <div d-flex justify-content-center>
+							 <button type="submit" class="btn btn-default btn-lg btn-link"><a href="#">Esqueceu a senha? </a></button>
+						 </div>
+                     </form>
+					  <!--fim do formulário-->
+
+                     <br/>
+                     <a href="#" class="pull-right btn btn-block btn-link" > Já tem cadastro e deseja fazer login?</a>
+                  </div>
+                  <div id="menu1" class="tab-pane fade">
+                     <br/>
+                     <a href="#" class="pull-right btn btn-block btn-success" > Login ?</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+{% endblock %}
+
+<!--block js_local-->
+{% block js_local %}
+	<!--js_local-->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 {% endblock %}

@@ -24,17 +24,17 @@
 </head>
 	
 	<!--bloco de conteudos -->
-	{% block content %}
-	{% endblock %}
-	<!--fim bloco de conteudos -->
+	<body>
+		{% block content %}
+		{% endblock %}
+		<!--fim bloco de conteudos -->
 
-	<!--carregando o js -->
-	{% bootstrap_javascript jquery='full' %}
-	
-	{% block js_local %}
-	
-	{% endblock %}
-<body>
+		<!--carregando o js -->
+		{% bootstrap_javascript jquery='full' %}
+		
+		{% block js_local %}
+		
+		{% endblock %}
+	</body>
 
-</body>
 </html>

@@ -34,10 +34,16 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    # 'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
 
     'core',
     'usuarios',
@@ -139,3 +145,8 @@ AUTH_USER_MODEL = 'usuarios.CustomUsuario'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = '/accounts/login'
+CRIPY_TEMPLATE_PACK = 'bootstrap4'
+
